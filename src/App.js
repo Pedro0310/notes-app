@@ -4,11 +4,14 @@ import NoteContainer from "./components/NoteContainer/NoteContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
   const [notes, setNotes] = useState(
     JSON.parse(localStorage.getItem("notes-app")) || []
   );
+
+  const [darkMode, setDarkMode] = useState(false);
 
   const addNote = (color) => {
     const tempNotes = [...notes];
@@ -47,13 +50,16 @@ function App() {
   }, [notes]);
 
   return (
-    <div className="App">
-      <Sidebar addNote={addNote} />
-      <NoteContainer
-        notes={notes}
-        deleteNote={deleteNote}
-        updateText={updateText}
-      />
+    <div className={`${darkMode && 'dark-mode'}`}>
+      <div className="App">
+        <Header handleToggleDarkmode={setDarkMode} />
+        <Sidebar addNote={addNote} />
+        <NoteContainer
+          notes={notes}
+          deleteNote={deleteNote}
+          updateText={updateText}
+        />
+      </div>
     </div>
   );
 }
