@@ -1,11 +1,10 @@
 .header{
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .dark-mode{
-  background-color: black;
+  background-color: grey;
 }
 
 .dark-mode h1{

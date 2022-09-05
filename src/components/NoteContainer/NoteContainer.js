@@ -35,7 +35,10 @@ function NoteContainer(props) {
         )}
       </div>
     </div>
+
+    
   );
+  
 }
 
 export default NoteContainer;

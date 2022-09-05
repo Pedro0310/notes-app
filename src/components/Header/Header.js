@@ -10,7 +10,7 @@ const Header = ({ handleToggleDarkmode }) => {
         }
         className="save"
       >
-        Toggle Mode
+        Dark Mode
       </button>
     </div>
   );
